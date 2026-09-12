@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sovereignaudit_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - APP_SECRET_KEY=${APP_SECRET_KEY}
+    volumes:
+      - model_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        limits:
+          memory: 14G
+        reservations:
+          memory: 4G
+
+volumes:
+  model_cache:

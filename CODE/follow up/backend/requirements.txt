@@ -1,0 +1,37 @@
+# ── Web Framework ────────────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+sse-starlette==2.1.0
+
+# ── Database Client ───────────────────────────────────────────────────────────
+supabase==2.4.6
+psycopg2-binary==2.9.9
+
+# ── Document Parsing ──────────────────────────────────────────────────────────
+docling>=2.0.0
+pdf2image==1.17.0
+pytesseract==0.3.10
+easyocr==1.7.1
+Pillow==10.3.0
+
+# ── PII Scrubbing ─────────────────────────────────────────────────────────────
+presidio-analyzer==2.2.354
+presidio-anonymizer==2.2.354
+spacy==3.7.4
+
+# ── Embeddings ────────────────────────────────────────────────────────────────
+sentence-transformers==3.0.1
+torch==2.3.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# ── AI API ────────────────────────────────────────────────────────────────────
+google-generativeai==0.7.2
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1
+pydantic>=2.7.1
+pydantic-settings>=2.3.0
+httpx==0.27.0
+tenacity==8.3.0
+structlog==24.2.0
