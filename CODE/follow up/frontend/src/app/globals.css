@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scrollbar-track: #09090b;
+  --scrollbar-thumb: rgba(161, 161, 170, 0.2);
+  --scrollbar-thumb-hover: rgba(161, 161, 170, 0.4);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Custom scrollbars */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 4px;
+  border: 1px solid var(--scrollbar-track);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+/* Premium Animations */
+@keyframes token-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.token-anim {
+  animation: token-fade-in 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(228, 228, 231, 0.05), inset 0 0 5px rgba(228, 228, 231, 0.02);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(228, 228, 231, 0.12), inset 0 0 10px rgba(228, 228, 231, 0.05);
+  }
+}
+
+.glow-active {
+  animation: glow-pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(228, 228, 231, 0.05); }
+  50% { border-color: rgba(228, 228, 231, 0.25); }
+}
+
+.pulse-border-anim {
+  animation: pulse-border 3s infinite ease-in-out;
+}
+
+.streaming-cursor::after {
+  content: "▊";
+  color: #d4d4d8;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Smooth glassmorphic glass utilities */
+.glass-panel {
+  background: rgba(18, 18, 20, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(228, 228, 231, 0.04);
+}
+
+.glass-panel:hover {
+  border-color: rgba(228, 228, 231, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom highlight badges - Sleek Dark & Grey theme */
+.highlight-clause {
+  background: rgba(244, 244, 245, 0.04);
+  color: #f4f4f5;
+  border: 1px solid rgba(244, 244, 245, 0.12);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+.highlight-legal-term {
+  background: rgba(161, 161, 170, 0.04);
+  color: #a1a1aa;
+  border: 1px solid rgba(161, 161, 170, 0.12);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.highlight-value {
+  background: rgba(113, 113, 122, 0.04);
+  color: #d4d4d8;
+  border: 1px solid rgba(113, 113, 122, 0.12);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.15s ease-out forwards;
+}
